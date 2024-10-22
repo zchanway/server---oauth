@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "be948b7f-b0d9-4745-b29e-55210a4c40e2",
+		"name": "Roberto Chan Way",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34768568"
+	},
+	"item": [
+		{
+			"name": "GenerarToken",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "client",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "Roberto",
+							"type": "text"
+						},
+						{
+							"key": "secret_id",
+							"value": "$2y$10$S8HUiCfl0zlhsmQCiYKn9e2XMuyaxj0OUiqOfxBzCRflO8445c892",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/oauth2/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API - PUBLICA",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "API - PRIVADA",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiI0NmEwZDY0MC1hMTNiLTRhOGItYTNhNC00ZjA0MTJkNzdjODEiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjbGllbnQiLCJhdWQiOiJjbGllbnQiLCJuYmYiOjE3Mjk1ODUxODQsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImV4cCI6MTcyOTU4Njk4NCwiaWF0IjoxNzI5NTg1MTg0LCJqdGkiOiJlOWZmOGExYy0yNjZhLTRlMWMtYjdkNC1hOTU1NWMyNzkxNWUifQ.QsL0lVmQEH0aeTPKvmiFIpKmref1eaHjdImZd1LRSX_v-lIT-G30cN17pl6KUxxa33LUC7-V3E-UWI_iCQHldCddLkw9-t4b8SYQIDNa3HvGbzRLwWigzydZ8wATchKCxCmB78ZU-ybd8Y0ZiQq97Xaqs4P8PUl2zlN4j7oiJSLUv4ELlExD5cSbWQ6_vtVEZir54OpNKbkXi7p8b2JcT7jYPvOVtLPPpxZTCdF219C2hjislAHMad5hiXFC6vraNPRYSmDp8BgGzERLYslhnhe7IQ00sPf6QoYjh31wXq0Lh-0Ty0g-hdYR3nlOQQ8514tz4OJU_rIqsofYrPieAQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/private",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"private"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
